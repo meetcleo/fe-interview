@@ -1,0 +1,28 @@
+{
+  "name": "fe-interview",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "json-server": "^0.14.0",
+    "node-sass": "^4.9.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.5",
+    "styled-components": "^4.0.2"
+  },
+  "scripts": {
+    "api": "json-server --watch db.json --port 3002",
+    "start": "PORT=3001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
