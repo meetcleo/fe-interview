@@ -16,8 +16,7 @@
 1. After each action, the lists should reflect the changes.
 
 ### Notes
-- Please aim to spend no more than 3 hours completing this task (you've got a life too!)
-- Please include tests
-- Feel free to use state management tools
+- Please aim to spend 2-3 hours completing this task
+- Feel free to use state management tools, and think about how the application might be testable
 - Style the components however you see fit, SASS, PostCSS or maybe even CSS in JS
-- The API contains other data, feel free to use this creatively
+- The API contains other data, feel free to use this creatively if you have the time
