@@ -5,8 +5,8 @@
   "dependencies": {
     "json-server": "^0.14.0",
     "node-sass": "^4.9.4",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-scripts": "2.0.5",
     "styled-components": "^4.0.2"
   },
