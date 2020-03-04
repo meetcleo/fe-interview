@@ -17,6 +17,9 @@
 
 ### Notes
 - Please aim to spend 2-3 hours completing this task
-- Feel free to use state management tools, and think about how the application might be testable
-- Style the components however you see fit, SASS, PostCSS or maybe even CSS in JS
+- We'd like to see state management tools being used
+- Tools we use at Cleo include styled-components, Typescript and Redux (with Sagas)
+- Style the components however you see fit. SASS or PostCSS are fine, but we'd prefer CSS in JS
+- We love tests, linted code and great looking UIs
 - The API contains other data, feel free to use this creatively if you have the time
+- Remember to check your project runs before submitting
