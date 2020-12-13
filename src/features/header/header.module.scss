@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.header {
+  background: $white;
+  text-align: center;
+  margin: 16px 0;
+
+  .headerLogo {
+    height: 48px;
+
+    img {
+      height: 100%;
+    }
+  }
+}

@@ -8,3 +8,8 @@ export const StyleConstants = {
 export const APIConstants = {
   base: 'http://localhost:3002/',
 };
+
+export const ROUTES = {
+  BILLS: '/bills',
+  TRANSACTIONS: '/transactions',
+};
