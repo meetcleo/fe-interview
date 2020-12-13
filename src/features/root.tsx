@@ -1,6 +1,9 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import { Store } from 'redux';
 import { ROUTES } from '../shared/constants';
+import { AppState } from '../types/app';
 import { Tabs } from '../ui-components/tabs/tabs';
 import { Bills } from './bills/bills';
 
@@ -13,16 +16,21 @@ const BILLS_TABS = [
   { route: ROUTES.TRANSACTIONS, text: 'Transactions' },
 ];
 
-export const Root: React.FC = () => (
-  <div>
-    <Header />
-    <div className={styles.container}>
-      <BrowserRouter>
-        <Tabs tabs={BILLS_TABS} />
-        <Route path={ROUTES.BILLS} component={Bills} />
-        <Route path={ROUTES.TRANSACTIONS} component={Bills} />
-        <Redirect to={ROUTES.BILLS} />
-      </BrowserRouter>
+interface Props {
+  store: Store<AppState>;
+}
+
+export const Root: React.FC<Props> = ({ store }) => (
+  <Provider store={store}>
+    <div>
+      <Header />
+      <div className={styles.container}>
+        <BrowserRouter>
+          <Tabs tabs={BILLS_TABS} />
+          <Route path={ROUTES.TYPE} component={Bills} />
+          <Redirect to={ROUTES.BILLS} />
+        </BrowserRouter>
+      </div>
     </div>
-  </div>
+  </Provider>
 );

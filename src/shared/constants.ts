@@ -12,4 +12,5 @@ export const APIConstants = {
 export const ROUTES = {
   BILLS: '/bills',
   TRANSACTIONS: '/transactions',
+  TYPE: '/:type',
 };
