@@ -14,3 +14,8 @@ export const ROUTES = {
   TRANSACTIONS: '/transactions',
   TYPE: '/:type',
 };
+
+export const ROUTE_PARAMS = {
+  BILLS: 'bills',
+  TRANSACTIONS: 'transactions',
+};

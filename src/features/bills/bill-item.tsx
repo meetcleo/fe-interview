@@ -8,18 +8,18 @@ import styles from './bill-item.module.scss';
 
 interface Props {
   item: Bill;
-  updateBill: (bill: Bill) => void;
+  handleUpdateBill: (bill: Bill) => void;
 }
 
-export const BillItem: React.FC<Props> = ({ item, updateBill }) => {
-  const { name, iconUrl, isBill, transactions } = item;
+export const BillItem: React.FC<Props> = ({ item, handleUpdateBill }) => {
+  const { name, isBill, transactions } = item;
 
   const [open, setOpen] = useState(false);
 
   const onClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation();
 
-    updateBill(item);
+    handleUpdateBill({ ...item, isBill: !item.isBill });
   };
 
   return (
@@ -27,7 +27,8 @@ export const BillItem: React.FC<Props> = ({ item, updateBill }) => {
       <div className={styles.billSummaryContainer}>
         <div className={styles.billInfo}>
           <div className={styles.billImageContainer}>
-            <img src={iconUrl || defaultImage} alt={name} />
+            {/* <img src={iconUrl || defaultImage} alt={name} /> */}
+            <img src={defaultImage} alt={name} />
           </div>
           <div className={styles.billTitle}>{name}</div>
         </div>

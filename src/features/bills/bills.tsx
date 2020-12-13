@@ -5,11 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Bill } from '../../types/bill-types';
 import { BillItem } from './bill-item';
 import { AppState } from '../../types/app';
-import { fetchBills } from '../../redux/actions/bills-actions';
-import {
-  filterBills,
-  filterTransactions,
-} from '../../redux/selectors/bills-selectors';
+import { fetchBills, updateBill } from '../../redux/actions/bills-actions';
+import { filterBillsByType } from '../../redux/selectors/bills-selectors';
 
 type Props = RouteComponentProps<{ type: string }>;
 
@@ -19,21 +16,12 @@ export const Bills: React.FC<Props> = ({
   },
 }) => {
   const dispatch = useDispatch();
-  const bills: Bill[] = useSelector((state: AppState) => state.bills.items);
+  const items: Bill[] = useSelector((state: AppState) =>
+    filterBillsByType(state.bills.items, type)
+  );
 
-  let items: Bill[];
-
-  if (type === 'bills') {
-    items = filterBills(bills);
-  } else {
-    items = filterTransactions(bills);
-  }
-
-  const updateBill = (bill: Bill) => {
-    // eslint-disable-next-line no-console
-    console.log(bill);
-    console.log({ ...bill, isBill: !bill.isBill });
-    // updateBill({ ...bill, isBill: !bill.isBill });
+  const handleUpdateBill = (bill: Bill) => {
+    dispatch(updateBill(bill));
   };
 
   useEffect(() => {
@@ -46,7 +34,11 @@ export const Bills: React.FC<Props> = ({
       {items &&
         items.length > 0 &&
         items.map((item) => (
-          <BillItem updateBill={updateBill} key={item.id} item={item} />
+          <BillItem
+            handleUpdateBill={handleUpdateBill}
+            key={item.id}
+            item={item}
+          />
         ))}
     </>
   );
