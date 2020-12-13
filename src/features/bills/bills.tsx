@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Bill } from '../../types/bill-types';
@@ -8,14 +8,9 @@ import { AppState } from '../../types/app';
 import { fetchBills, updateBill } from '../../redux/actions/bills-actions';
 import { filterBillsByType } from '../../redux/selectors/bills-selectors';
 
-type Props = RouteComponentProps<{ type: string }>;
-
-export const Bills: React.FC<Props> = ({
-  match: {
-    params: { type },
-  },
-}) => {
+export const Bills: React.FC = () => {
   const dispatch = useDispatch();
+  const { type } = useParams<{ type: string }>();
   const items: Bill[] = useSelector((state: AppState) =>
     filterBillsByType(state.bills.items, type)
   );

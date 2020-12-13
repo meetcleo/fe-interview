@@ -8,9 +8,11 @@ export interface TabInfo {
   text: string;
 }
 
-interface Props extends RouteComponentProps {
+export interface OwnProps {
   tabs: TabInfo[];
 }
+
+type Props = RouteComponentProps & OwnProps;
 
 export const TabsComponent: React.FC<Props> = ({ tabs }) => (
   <div className={styles.tabsWrapper}>

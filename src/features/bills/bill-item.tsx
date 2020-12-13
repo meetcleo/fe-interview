@@ -6,13 +6,13 @@ import { Bill } from '../../types/bill-types';
 import defaultImage from '../../assets/cleo_coin.jpg';
 import styles from './bill-item.module.scss';
 
-interface Props {
+export interface Props {
   item: Bill;
   handleUpdateBill: (bill: Bill) => void;
 }
 
 export const BillItem: React.FC<Props> = ({ item, handleUpdateBill }) => {
-  const { name, isBill, transactions } = item;
+  const { name, iconUrl, isBill, transactions } = item;
 
   const [open, setOpen] = useState(false);
 
@@ -27,8 +27,7 @@ export const BillItem: React.FC<Props> = ({ item, handleUpdateBill }) => {
       <div className={styles.billSummaryContainer}>
         <div className={styles.billInfo}>
           <div className={styles.billImageContainer}>
-            {/* <img src={iconUrl || defaultImage} alt={name} /> */}
-            <img src={defaultImage} alt={name} />
+            <img src={iconUrl || defaultImage} alt={name} />
           </div>
           <div className={styles.billTitle}>{name}</div>
         </div>

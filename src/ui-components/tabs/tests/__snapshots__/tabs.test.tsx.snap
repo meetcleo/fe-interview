@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs > should render the component 1`] = `
+<div
+  class="tabsWrapper"
+>
+  <a
+    aria-current="page"
+    class="tab tabActive"
+    href="/"
+  >
+    Home
+  </a>
+</div>
+`;

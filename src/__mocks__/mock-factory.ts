@@ -1,4 +1,4 @@
-import { Bill } from '../../types/bill-types';
+import { Bill } from '../types/bill-types';
 
 export const MOCK_BILLS: Bill[] = [
   {

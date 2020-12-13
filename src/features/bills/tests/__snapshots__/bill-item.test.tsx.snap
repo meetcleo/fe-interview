@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BillItem /> renders 1`] = `
+<div
+  class="bill"
+>
+  <div
+    class="billSummaryContainer"
+  >
+    <div
+      class="billInfo"
+    >
+      <div
+        class="billImageContainer"
+      >
+        <img
+          alt="Vodafone"
+          src="https://pbs.twimg.com/profile_images/915824582455627776/nsyHCFq9.jpg"
+        />
+      </div>
+      <div
+        class="billTitle"
+      >
+        Vodafone
+      </div>
+    </div>
+    <div
+      class="transactionAmount"
+    >
+      <div
+        class="amount"
+      >
+        5
+      </div>
+    </div>
+  </div>
+  <div
+    class="updateBill"
+  >
+    Add as bill
+  </div>
+</div>
+`;
