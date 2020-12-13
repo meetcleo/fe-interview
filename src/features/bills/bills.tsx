@@ -32,6 +32,8 @@ export const Bills: React.FC<Props> = ({
   const updateBill = (bill: Bill) => {
     // eslint-disable-next-line no-console
     console.log(bill);
+    console.log({ ...bill, isBill: !bill.isBill });
+    // updateBill({ ...bill, isBill: !bill.isBill });
   };
 
   useEffect(() => {

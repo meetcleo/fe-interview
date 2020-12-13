@@ -22,6 +22,7 @@
     "start:dev": "concurrently \"npm run api\" \"npm start\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --runInBand --watchAll=false",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
     "isready": "npm run format && npm run lint && npm run build"
