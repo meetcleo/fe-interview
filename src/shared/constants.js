@@ -6,5 +6,7 @@ export const StyleConstants = {
 };
 
 export const APIConstants = {
-  base: 'http://localhost:3002/'
+  base: 'http://localhost:3002/',
+  bills: 'http://localhost:3002/bills',
+  categories: 'http://localhost:3002/categories'
 };
