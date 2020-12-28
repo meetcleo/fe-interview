@@ -31,13 +31,13 @@ const Transactions = () => {
               {transaction.isBill === false && (
                 <>
                   <Row>
-                    <Col xs="1">
+                    <Col xs="6" lg="4">
                       <Icon
                         iconURL={transaction.iconURL}
-                        altText="business icon"
+                        altText={`${transaction.name} business icon`}
                       />
                     </Col>
-                    <Col xs="3">
+                    <Col xs="4" lg="6">
                       <CompanyName companyName={transaction.name} />
                     </Col>
                   </Row>

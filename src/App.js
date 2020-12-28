@@ -6,7 +6,8 @@ const alignCenter = {
   display: 'block',
   marginLeft: 'auto',
   marginRight: 'auto',
-  paddingTop: '16px'
+  paddingTop: '24px',
+  paddingBottom: '16px'
 };
 
 const App = () => {

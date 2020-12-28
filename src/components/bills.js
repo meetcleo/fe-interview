@@ -35,7 +35,10 @@ const Bills = () => {
                   <>
                     <Row>
                       <Col xs="3" lg="1">
-                        <Icon imgUrl={bill.iconURL} altText="business icon" />
+                        <Icon
+                          imgUrl={bill.iconURL}
+                          altText={`${bill.name} business icon`}
+                        />
                       </Col>
                       <Col xs="3">
                         <CompanyName companyName={bill.name} />

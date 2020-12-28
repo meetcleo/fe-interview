@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Collapse, Button, Row, Col } from 'reactstrap';
 
-import { formatter } from '../constants.js';
+import { formatter, wrapperStyles } from '../constants.js';
 
 type Props = {
   ctaText: string,
@@ -16,7 +16,7 @@ const Accordian = ({ ctaText, buttonColor, items }: Props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div style={wrapperStyles}>
       <Button
         color={buttonColor}
         onClick={toggle}
@@ -28,7 +28,7 @@ const Accordian = ({ ctaText, buttonColor, items }: Props) => {
         {items
           ? items.map((item) => {
               return (
-                <Row key={item.id} style={{ marginBottom: '12px' }}>
+                <Row key={item.id} style={{ marginBottom: '16px' }}>
                   <Col>{formatter.format(item.amount)}</Col>
                   <Col>{item.date}</Col>
                 </Row>

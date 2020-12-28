@@ -85,7 +85,7 @@ const Tabs = (props) => {
           </Row>
         </TabPane>
         <TabPane tabId="2">
-          <Row>
+          <Row style={wrapperStyles}>
             <Col lg="6" style={{ textAlign: 'center', fontWeight: 'bold' }}>
               Company coming after your money{' '}
               <span role="img" aria-label="worried face">
