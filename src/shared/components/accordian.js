@@ -8,7 +8,7 @@ import { formatter } from '../constants.js';
 type Props = {
   ctaText: string,
   buttonColor: string,
-  items?: Array
+  items?: Array<*>
 };
 
 const Accordian = ({ ctaText, buttonColor, items }: Props) => {
