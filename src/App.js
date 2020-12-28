@@ -1,12 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import welcomeIcon from './assets/welcome.jpg';
+import Tabs from './components/tabs';
 
-class App extends Component {
-  render() {
-    return (
-      <img src={welcomeIcon} alt="Welcome!"/>
-    );
-  }
-}
+const alignCenter = {
+  display: 'block',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  paddingTop: '16px'
+};
+
+const App = () => {
+  return (
+    <>
+      <img style={alignCenter} src={welcomeIcon} alt="Welcome!" />
+      <Tabs />
+    </>
+  );
+};
 
 export default App;

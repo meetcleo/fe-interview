@@ -5,6 +5,10 @@ export const StyleConstants = {
   }
 };
 
+export const wrapperStyles = {
+  padding: '36px'
+};
+
 export const APIConstants = {
   base: 'http://localhost:3002/',
   bills: 'http://localhost:3002/bills',
