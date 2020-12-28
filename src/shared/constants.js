@@ -14,3 +14,9 @@ export const APIConstants = {
   bills: 'http://localhost:3002/bills',
   categories: 'http://localhost:3002/categories'
 };
+
+export const formatter = new Intl.NumberFormat('en-GB', {
+  style: 'currency',
+  currency: 'GBP',
+  minimumFractionDigits: 2
+});

@@ -9,7 +9,7 @@ type Props = {
 const NumberOfTransactions = ({ providedNumber }: Props) => {
   return (
     <>
-      <section>{providedNumber}</section>
+      <section style={{ textAlign: 'center' }}>{providedNumber}</section>
     </>
   );
 };
