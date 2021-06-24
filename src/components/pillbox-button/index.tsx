@@ -40,7 +40,7 @@ export default function PillboxButton({
           active={activeTab === Tab.PotentialBills}
           onClick={() => onChange(Tab.PotentialBills)}
         >
-          Potential
+          Potential Bills
         </InnerWrapper>
       </Wrapper>
     </div>
