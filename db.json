@@ -106,7 +106,7 @@
       "categoryId": 2,
       "iconUrl": "https://pbs.twimg.com/profile_images/1235992718171467776/PaX2Bz1S_bigger.jpg",
       "id": "5a5cab18fe33900100fd8ed8",
-      "isBill": false,
+      "isBill": true,
       "name": "Netflix",
       "transactions": [
         {
@@ -140,7 +140,7 @@
       "categoryId": 3,
       "iconUrl": null,
       "id": "5a5cab3bfe33900100fd8ed9",
-      "isBill": false,
+      "isBill": true,
       "name": "Transfer to flatmate",
       "transactions": [
         {

@@ -21,9 +21,9 @@ export default function Bills() {
 
   return (
     <>
-      {potentialBills.map((bill, i) => (
+      {potentialBills.map((bill) => (
         <MerchantCard
-          key={i}
+          key={bill.id}
           merchant={bill}
           onClick={handleAddBill}
           buttonText={'Add Bill'}

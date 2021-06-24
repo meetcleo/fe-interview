@@ -2,12 +2,19 @@ import {
   KeyboardArrowDown,
   KeyboardArrowRight,
 } from '@styled-icons/material-outlined'
-import { useContext, useState } from 'react'
+import {
+  MutableRefObject,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import styled from 'styled-components'
 import { Breakpoints, Colors, Merchant } from '../../@types'
 import { StateContext } from '../../providers/StateProvider'
 import formatCurrency from '../../utils/format-currency'
 import SecondaryButton from '../secondary-button'
+import { useSpring, animated, WithAnimated } from 'react-spring'
 
 const IMAGE_WIDTH = 40
 const IMAGE_MARGIN = 15
@@ -59,8 +66,20 @@ export default function MerchantCard({
   onClick: (id: number) => void
   buttonText: string
 }) {
+  const contentRef = useRef<null | HTMLDivElement>(null)
+  const [contentHeight, setContentHeight] = useState<number>(0)
   const [isOpen, setIsOpen] = useState(false)
   const { categories } = useContext(StateContext)
+
+  const animatedStyles = useSpring({
+    maxHeight: isOpen ? contentHeight : 0,
+    overflow: 'hidden',
+  })
+
+  useEffect(() => {
+    // Get height of content for animation purposes
+    setContentHeight(contentRef?.current?.scrollHeight || 0)
+  }, [])
 
   const { id, categoryId, iconUrl, name, transactions } = merchant
 
@@ -88,11 +107,14 @@ export default function MerchantCard({
           </div>
         </div>
       </InnerWrapper>
-      {isOpen && (
+
+      {/* Collapsible Section */}
+      <animated.div ref={contentRef} style={animatedStyles}>
         <OpenWrapper>
           <div style={{ marginBottom: 30 }}>
             {transactions.map((transaction) => (
               <div
+                key={transaction.id}
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -112,7 +134,7 @@ export default function MerchantCard({
             </SecondaryButton>
           </div>
         </OpenWrapper>
-      )}
+      </animated.div>
     </Wrapper>
   )
 }

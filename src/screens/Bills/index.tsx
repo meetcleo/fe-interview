@@ -19,9 +19,9 @@ export default function Bills() {
 
   return (
     <>
-      {bills.map((bill, i) => (
+      {bills.map((bill) => (
         <MerchantCard
-          key={i}
+          key={bill.id}
           merchant={bill}
           onClick={handleRemoveBill}
           buttonText={'Remove Bill'}
