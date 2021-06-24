@@ -11,8 +11,6 @@ import PotentialBills from './screens/PotentialBills'
 function App() {
   const [tab, setTab] = useState<Tab>(Tab.Bills)
 
-  console.log(tab)
-
   return (
     <StateProvider>
       <>
