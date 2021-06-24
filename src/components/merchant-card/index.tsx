@@ -2,26 +2,28 @@ import {
   KeyboardArrowDown,
   KeyboardArrowRight,
 } from '@styled-icons/material-outlined'
-import {
-  MutableRefObject,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { animated, useSpring } from 'react-spring'
 import styled from 'styled-components'
 import { Breakpoints, Colors, Merchant } from '../../@types'
 import { StateContext } from '../../providers/StateProvider'
 import formatCurrency from '../../utils/format-currency'
 import SecondaryButton from '../secondary-button'
-import { useSpring, animated, WithAnimated } from 'react-spring'
 
 const IMAGE_WIDTH = 40
 const IMAGE_MARGIN = 15
 
 const Icon = styled.img`
-  height: ${IMAGE_WIDTH}px;
+  width: ${IMAGE_WIDTH}px;
   margin-right: ${IMAGE_MARGIN}px;
+  border-radius: 20px;
+`
+
+const EmptyIcon = styled.div`
+  height: ${IMAGE_WIDTH}px;
+  width: ${IMAGE_WIDTH}px;
+  margin-right: ${IMAGE_MARGIN}px;
+  background-color: ${Colors.primary};
   border-radius: 20px;
 `
 
@@ -86,7 +88,12 @@ export default function MerchantCard({
   return (
     <Wrapper>
       <InnerWrapper onClick={() => setIsOpen(!isOpen)}>
-        <Icon src={'https://via.placeholder.com/150'} />
+        {iconUrl ? (
+          <Icon src={`${process.env.PUBLIC_URL}/assets/${iconUrl}`} />
+        ) : (
+          <EmptyIcon />
+        )}
+
         <div
           style={{ display: 'flex', justifyContent: 'space-between', flex: 1 }}
         >
