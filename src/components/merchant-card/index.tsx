@@ -64,10 +64,6 @@ export default function MerchantCard({
 
   const { id, categoryId, iconUrl, name, transactions } = merchant
 
-  const category = categories.find(
-    (category) => categoryId === category.id
-  )?.name
-
   return (
     <Wrapper>
       <InnerWrapper onClick={() => setIsOpen(!isOpen)}>
@@ -80,7 +76,7 @@ export default function MerchantCard({
               {name}
             </div>
             <div style={{ color: 'darkgrey', fontSize: 14 }}>
-              {transactions.length} transactions | {category}
+              {transactions.length} transactions | {categories[categoryId]}
             </div>
           </div>
           <div style={{ alignSelf: 'center' }}>

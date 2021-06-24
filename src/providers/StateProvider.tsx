@@ -10,7 +10,7 @@ import {
 interface StateContextType {
   isInitialLoading: boolean
   hasError: boolean
-  categories: Category[]
+  categories: Record<number, string>
   merchants: Merchant[]
   addBill: (id: number) => Promise<void>
   removeBill: (id: number) => Promise<void>
@@ -26,7 +26,7 @@ export default function StateProvider({
   const [state, setState] = useState<{
     isInitialLoading: boolean
     hasError: boolean
-    categories: Category[]
+    categories: Record<number, string>
     merchants: Merchant[]
   }>({
     isInitialLoading: true,
@@ -41,17 +41,24 @@ export default function StateProvider({
         getCategoriesApi(),
         getMerchantsApi(),
       ])
+
+      // Make categories a hashmap for faster lookup
+      const categoriesMap: Record<number, string> = {}
+      categories.forEach((category) => {
+        categoriesMap[category.id] = category.name
+      })
+
       setState((prev) => ({
         ...prev,
         isInitialLoading: false,
-        categories,
+        categories: categoriesMap,
         merchants,
       }))
     } catch (e) {
       setState({
         hasError: true,
         isInitialLoading: false,
-        categories: [],
+        categories: {},
         merchants: [],
       })
     }

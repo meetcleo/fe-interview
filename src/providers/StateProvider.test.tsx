@@ -14,12 +14,13 @@ jest.mock('../services/categories')
 jest.mock('../services/merchants')
 
 const mockCategories: Category[] = [
-  { id: 1, name: 'Finance', iconUrl: 'iconUrl' },
+  { id: 1, name: 'Food', iconUrl: 'iconUrl' },
+  { id: 2, name: 'Banking', iconUrl: 'iconUrl' },
 ]
 const mockMerchants: Merchant[] = [
   {
     id: 1,
-    categoryId: '1',
+    categoryId: 1,
     name: 'Pret',
     isBill: true,
     iconUrl: 'iconUrl',
@@ -27,7 +28,7 @@ const mockMerchants: Merchant[] = [
   },
   {
     id: 2,
-    categoryId: '2',
+    categoryId: 1,
     name: 'Starbucks',
     isBill: false,
     iconUrl: 'iconUrl',
@@ -53,7 +54,7 @@ describe('StateProvider', () => {
     await waitForNextUpdate()
 
     expect(result.current.merchants).toEqual(mockMerchants)
-    expect(result.current.categories).toEqual(mockCategories)
+    expect(result.current.categories).toEqual({ 1: 'Food', 2: 'Banking' })
     expect(result.current.isInitialLoading).toBe(false)
     expect(result.current.hasError).toBe(false)
   })

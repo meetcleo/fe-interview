@@ -72,7 +72,7 @@
       "categoryId": 3,
       "iconUrl": "https://pbs.twimg.com/profile_images/1280422740638470147/aBXwvFOs_bigger.jpg",
       "id": "5a5caad4fe33900100fd8ed7",
-      "isBill": false,
+      "isBill": true,
       "name": "HSBC Mortgage",
       "transactions": [
         {
