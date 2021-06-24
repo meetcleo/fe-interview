@@ -1,8 +1,8 @@
-import React from 'react';
-import welcomeIcon from './assets/welcome.jpg';
+import React from 'react'
+import welcomeIcon from './assets/welcome.jpg'
 
 const App: React.FunctionComponent = () => (
-  <img src={welcomeIcon} alt="Welcome!"/>
-);
+  <img src={welcomeIcon} alt='Welcome!' />
+)
 
-export default App;
+export default App
