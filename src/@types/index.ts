@@ -5,7 +5,7 @@ export interface Transaction {
 }
 
 export interface Merchant {
-  categoryId: string
+  categoryId: number
   iconUrl: string
   id: number
   name: string
@@ -17,4 +17,19 @@ export interface Category {
   iconUrl: string
   id: number
   name: string
+}
+
+export const Colors = {
+  primary: '#0C15F7',
+  primaryAccent: '#66b1ff',
+  background: 'whitesmoke',
+  lightGrey: '#f0f0f0',
+  dark: '#403E3D',
+}
+
+export enum Breakpoints {
+  xSmall = 480,
+  Small = 800,
+  Medium = 992,
+  Large = 1200,
 }

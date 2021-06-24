@@ -1,10 +1,32 @@
 import { useContext } from 'react'
+import MerchantCard from '../../components/merchant-card'
 import { StateContext } from '../../providers/StateProvider'
 
 export default function Bills() {
-  const { merchants } = useContext(StateContext)
+  const { merchants, removeBill } = useContext(StateContext)
 
-  console.log(merchants)
+  const bills = merchants.filter((merchant) => merchant.isBill === true)
 
-  return <div>Bills</div>
+  if (!bills) return null
+
+  const handleRemoveBill = async (id: number) => {
+    try {
+      await removeBill(id)
+    } catch (e) {
+      // err
+    }
+  }
+
+  return (
+    <>
+      {bills.map((bill, i) => (
+        <MerchantCard
+          key={i}
+          merchant={bill}
+          onClick={handleRemoveBill}
+          buttonText={'Remove Bill'}
+        />
+      ))}
+    </>
+  )
 }

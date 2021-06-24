@@ -15,6 +15,12 @@ function App() {
         <Jumbotron />
         <Container style={{ marginTop: -50 }}>
           <Card>
+            <div style={{ marginBottom: 20 }}>
+              <button onClick={() => setTab('bills')}>Bills</button>
+              <button onClick={() => setTab('potential')}>
+                Potential Bills
+              </button>
+            </div>
             {tab === 'bills' && <Bills />}
             {tab === 'potential' && <PotentialBills />}
           </Card>

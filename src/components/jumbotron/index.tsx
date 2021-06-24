@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Colors } from '../../@types'
 
 const StyledJumbotron = styled.div`
-  background: linear-gradient(135deg, #17a77b, #74c947);
+  background: ${Colors.primary};
   height: 250px;
 `
 

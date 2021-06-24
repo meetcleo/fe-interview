@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "@styled-icons/material-outlined": "^10.34.0",
     "json-server": "^0.16.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
