@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Tab } from '../../@types'
+import { Colors, Tab } from '../../@types'
 
 const Wrapper = styled.div`
   display: flex;
-  background-color: lightgrey;
+  background-color: ${Colors.lightGrey};
   border-radius: 25px;
   padding: 5px;
   max-width: 350px;
@@ -12,7 +12,6 @@ const Wrapper = styled.div`
 
 const InnerWrapper = styled.div<{ active?: boolean }>`
   flex: 1;
-  height: 15px;
   font-size: 14px;
   padding: 10px 20px;
   text-align: center;

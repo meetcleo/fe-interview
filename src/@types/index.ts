@@ -25,7 +25,7 @@ export enum Tab {
 }
 
 export const Colors = {
-  primary: '#0C15F7',
+  primary: '#0E16FF',
   primaryAccent: '#66b1ff',
   background: 'whitesmoke',
   lightGrey: '#f0f0f0',
