@@ -19,6 +19,11 @@ export interface Category {
   name: string
 }
 
+export enum Tab {
+  Bills = 'bills',
+  PotentialBills = 'potential-bills',
+}
+
 export const Colors = {
   primary: '#0C15F7',
   primaryAccent: '#66b1ff',

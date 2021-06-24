@@ -1,5 +1,5 @@
 import { createContext, ReactElement, useEffect, useState } from 'react'
-import { Category, Merchant } from '../@types'
+import { Merchant } from '../@types'
 import { getCategoriesApi } from '../services/categories'
 import {
   addBillApi,

@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
+import { Tab } from './@types'
 import Card from './components/card'
 import Container from './components/container'
 import Jumbotron from './components/jumbotron'
+import PillboxButton from './components/pillbox-button'
 import StateProvider from './providers/StateProvider'
 import Bills from './screens/Bills'
 import PotentialBills from './screens/PotentialBills'
 
 function App() {
-  const [tab, setTab] = useState<'bills' | 'potential'>('bills')
+  const [tab, setTab] = useState<Tab>(Tab.Bills)
+
+  console.log(tab)
 
   return (
     <StateProvider>
@@ -16,13 +20,10 @@ function App() {
         <Container style={{ marginTop: -50 }}>
           <Card>
             <div style={{ marginBottom: 20 }}>
-              <button onClick={() => setTab('bills')}>Bills</button>
-              <button onClick={() => setTab('potential')}>
-                Potential Bills
-              </button>
+              <PillboxButton activeTab={tab} onChange={setTab} />
             </div>
-            {tab === 'bills' && <Bills />}
-            {tab === 'potential' && <PotentialBills />}
+            {tab === Tab.Bills && <Bills />}
+            {tab === Tab.PotentialBills && <PotentialBills />}
           </Card>
         </Container>
       </>

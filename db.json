@@ -4,7 +4,7 @@
       "categoryId": 1,
       "iconUrl": "https://pbs.twimg.com/profile_images/1151788824093188097/wHfb5mYZ_bigger.png",
       "id": "5a5caa1efe33900100fd8ed5",
-      "isBill": false,
+      "isBill": true,
       "name": "Vodafone",
       "transactions": [
         {
@@ -38,7 +38,7 @@
       "categoryId": 2,
       "iconUrl": "https://pbs.twimg.com/profile_images/1280004967726751744/1YFw1Bdu_bigger.jpg",
       "id": "5a5caa8efe33900100fd8ed6",
-      "isBill": true,
+      "isBill": false,
       "name": "Sky TV",
       "transactions": [
         {
