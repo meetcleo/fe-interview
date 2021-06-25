@@ -30,6 +30,7 @@ export const Colors = {
   background: 'whitesmoke',
   lightGrey: '#f0f0f0',
   dark: '#403E3D',
+  danger: '#fc5c65',
 }
 
 export enum Breakpoints {
