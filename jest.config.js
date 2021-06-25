@@ -8,6 +8,6 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   moduleNameMapper: {
-    '\\.svg': '<rootDir>/src/__mocks__/svg.ts',
+    '\\.png': '<rootDir>/src/__mocks__/png.ts',
   },
 }
