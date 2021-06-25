@@ -20,7 +20,7 @@
 
 Some notes on the tech used:
 - **react-test-renderer** - I swapped out react-testing-library for the more lower-level library
-- **React Context API** - Redux seemed heavy for this use case, so I relied on a `useState` context provider with testing to handle the app's state. Given that certain resources needed to be fetched separately, such as `categories`, it would be interesting to explore using GraphQL to delegate the joining of this data to the server layer. The StateProvider is heavily integration tested using `@testing-library/react-hooks`, which a small abstraction that allows hooks to be tested without the need to spin up a mock component.
+- **React Context API** - Redux seemed heavy for this use case, so I relied on a `useState` context provider with testing to handle the app's state. Given that certain resources needed to be fetched separately, such as `categories`, it would be interesting to explore using GraphQL to delegate the joining of this data to the server layer. The StateProvider is heavily integration tested using `@testing-library/react-hooks`, which is a small abstraction that allows hooks to be tested without the need to spin up a mock component.
 - **Styled-Components** - I leaned heavily on styled components to handle CSS-in-JS components, but also used inline React styles for smaller use cases, such as section margin and padding.
 - **React-Spring** - I used this library to add animations to the accordion section on the MerchantCard.
 
