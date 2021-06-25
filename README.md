@@ -18,6 +18,8 @@
 
 ### Chanon's Notes
 
+- A lot of the old db.json CDN asset links were 404ing, so I just saved them manually into the public assets folder for the purposes of this exercise.
+
 Some notes on the tech used:
 - **react-test-renderer** - I swapped out react-testing-library for the more lower-level library
 - **React Context API** - Redux seemed heavy for this use case, so I relied on a `useState` context provider with testing to handle the app's state. Given that certain resources needed to be fetched separately, such as `categories`, it would be interesting to explore using GraphQL to delegate the joining of this data to the server layer. The StateProvider is heavily integration tested using `@testing-library/react-hooks`, which is a small abstraction that allows hooks to be tested without the need to spin up a mock component.
