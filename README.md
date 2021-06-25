@@ -16,14 +16,18 @@
 1. Add an action to the potential bills tab for each merchant called "Add as bill" which updates the relevant merchant's `isBill` flag to `true`.
 1. After each action, the lists should reflect the changes.
 
-### Notes
-- Please aim to spend 2-3 hours completing this task
-- We'd like to see state management tools being used
-- Tools we use at Cleo include styled-components, Typescript and Redux (with Sagas)
-- Style the components however you see fit. SASS or PostCSS are fine, but we'd prefer CSS in JS
-- We love tests, linted code and great looking UIs
-- The API contains other data, feel free to use this creatively if you have the time
-- Remember to check your project runs before submitting
+### Chanon's Notes
+
+Some notes on the tech used:
+- **react-test-renderer** - I swapped out react-testing-library for the more lower-level library
+- **React Context API** - Redux seemed heavy for this use case, so I relied on a `useState` context provider with testing to handle the app's state. Given that certain resources needed to be fetched separately, such as `categories`, it would be interesting to explore using GraphQL to delegate the joining of this data to the server layer. The StateProvider is heavily integration tested using `@testing-library/react-hooks`, which a small abstraction that allows hooks to be tested without the need to spin up a mock component.
+- **Styled-Components** - I leaned heavily on styled components to handle CSS-in-JS components, but also used inline React styles for smaller use cases, such as section margin and padding.
+- **React-Spring** - I used this library to add animations to the accordion section on the MerchantCard.
+
+Where I would go with more time:
+- In the interest of time, I focused on the more important tests - but, I would focus further on unit testing the components, especially the `MerchantCard` component.
+- I would spend more time on animations, specifically with the pillbox to have a smooth toggle effect similar to what you see in `Monzo`.
+- I would spend some added time making sure that browser polyfills and mobile responsiveness is respected, especially on very small devices.
 
 ## Screenshot
 
