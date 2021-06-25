@@ -7,7 +7,7 @@ import {
   removeBillApi,
 } from '../services/merchants'
 
-interface StateContextType {
+export interface StateContextType {
   isInitialLoading: boolean
   hasError: boolean
   categories: Record<number, string>
