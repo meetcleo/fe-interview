@@ -1,4 +1,5 @@
 ## Cleo Frontend Interview - Bills
+
 ### Get Started
 1. Fork or clone this repo (a simple [`create-react-app`](https://github.com/facebook/create-react-app) extended with [`json-server`](https://github.com/typicode/json-server) and some Cleo-specific goodies)
 1. Install dependencies via `yarn` (or `npm`)
@@ -23,3 +24,7 @@
 - We love tests, linted code and great looking UIs
 - The API contains other data, feel free to use this creatively if you have the time
 - Remember to check your project runs before submitting
+
+## Screenshot
+
+![image](https://github.com/chanonroy/fe-interview/blob/master/src/assets/screenshot.png)
