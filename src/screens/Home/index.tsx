@@ -5,6 +5,7 @@ import Container from '../../components/container'
 import ErrorBanner from '../../components/error-message'
 import Jumbotron from '../../components/jumbotron'
 import PillboxButton from '../../components/pillbox-button'
+import Search from '../../components/search'
 import { StateContext } from '../../providers/StateProvider'
 import Bills from '../Bills'
 import PotentialBills from '../PotentialBills'
@@ -29,12 +30,15 @@ export default function Home() {
     <>
       <Jumbotron />
       <Container style={{ marginTop: -50 }}>
-        <Card>
+        <Card style={{ marginBottom: 20 }}>
           <div style={{ marginBottom: 20 }}>
             <PillboxButton activeTab={tab} onChange={setTab} />
           </div>
           {tab === Tab.Bills && <Bills />}
           {tab === Tab.PotentialBills && <PotentialBills />}
+        </Card>
+        <Card>
+          <Search />
         </Card>
       </Container>
     </>

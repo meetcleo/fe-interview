@@ -85,6 +85,13 @@ export default function MerchantCard({
 
   const { id, categoryId, iconUrl, name, transactions } = merchant
 
+  const totalSum = transactions.reduce((sum, transaction) => {
+    const { amount } = transaction
+    return sum + amount
+  }, 0)
+
+  const averageAmount = totalSum / transactions.length
+
   return (
     <Wrapper>
       <InnerWrapper onClick={() => setIsOpen(!isOpen)}>
@@ -135,6 +142,7 @@ export default function MerchantCard({
               </div>
             ))}
           </div>
+          <div data-testid={'average-amount'}>{averageAmount}</div>
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <SecondaryButton onClick={() => onClick(id)}>
               {buttonText}

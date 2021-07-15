@@ -10,7 +10,10 @@ const mockMerchant: Merchant = {
   name: 'Pret',
   isBill: true,
   iconUrl: 'iconUrl',
-  transactions: [{ id: 1, date: '2021-02-02', amount: 12.34 }],
+  transactions: [
+    { id: 1, date: '2021-02-02', amount: 10.0 },
+    { id: 2, date: '2021-02-02', amount: 5.0 },
+  ],
 }
 
 const mockCategories: Record<number, string> = {
@@ -39,5 +42,23 @@ describe('Merchant Card', () => {
     })
 
     expect(onClick).toHaveBeenCalledTimes(1)
+  })
+  it('displays the average transaction amount', async () => {
+    const onClick = jest.fn()
+    const { root } = create(
+      <StateContext.Provider
+        value={{ categories: mockCategories } as StateContextType}
+      >
+        <MerchantCard
+          merchant={mockMerchant}
+          onClick={onClick}
+          buttonText={'Button'}
+        />
+      </StateContext.Provider>
+    )
+
+    expect(
+      root.findByProps({ 'data-testid': 'average-amount' }).props.children
+    ).toBe(7.5)
   })
 })
